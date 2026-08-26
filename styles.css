@@ -604,6 +604,16 @@ body.offer-body { background: #0B0A09; }
   margin-top: 2rem;
 }
 
+.offer-actions .btn-ghost {
+  color: #161310;
+  border-color: #C5B8AA;
+}
+
+.offer-actions .btn-ghost:hover {
+  border-color: var(--ember-deep);
+  color: var(--ember-deep);
+}
+
 .success {
   margin-top: 1.4rem;
   padding: 1.1rem 1.15rem;
