@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f7;
+  --foreground: #1a1917;
+  --ember: #c45c3e;
+  --ember-light: #d97c5e;
+  --ember-dark: #a34a30;
+  --copper: #b87333;
+  --warm-black: #1a1917;
+  --warm-gray-100: #f5f4f2;
+  --warm-gray-200: #e8e6e3;
+  --warm-gray-300: #d4d1cc;
+  --warm-gray-400: #a8a49d;
+  --warm-gray-500: #7c786f;
+  --warm-gray-600: #5c5850;
+  --warm-gray-700: #3d3a34;
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ember: var(--ember);
+  --color-ember-light: var(--ember-light);
+  --color-ember-dark: var(--ember-dark);
+  --color-copper: var(--copper);
+  --color-warm-black: var(--warm-black);
+  --color-warm-100: var(--warm-gray-100);
+  --color-warm-200: var(--warm-gray-200);
+  --color-warm-300: var(--warm-gray-300);
+  --color-warm-400: var(--warm-gray-400);
+  --color-warm-500: var(--warm-gray-500);
+  --color-warm-600: var(--warm-gray-600);
+  --color-warm-700: var(--warm-gray-700);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input, textarea, select {
+  font-family: var(--font-sans);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--ember);
+  color: white;
+}
