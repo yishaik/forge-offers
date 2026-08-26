@@ -294,6 +294,7 @@ html[dir="rtl"] .card::before { inset: 0 0 auto auto; border-radius: 0 6px 6px 0
 .price-grid {
   display: grid;
   gap: 1rem;
+  max-width: 34rem;
 }
 
 .price-card {
@@ -326,6 +327,13 @@ html[dir="rtl"] .card::before { inset: 0 0 auto auto; border-radius: 0 6px 6px 0
 }
 .price-card li { padding: 0.28rem 0; border-top: 1px solid var(--line); }
 .price-card li:first-child { border-top: 0; }
+
+.price-note {
+  margin: 1.2rem 0 0;
+  max-width: 36rem;
+  color: var(--cream-mute);
+  font-size: 0.92rem;
+}
 
 .site-footer {
   padding: 2.4rem 0 2.6rem;
@@ -637,7 +645,7 @@ body.offer-body { background: #0B0A09; }
 @media (min-width: 720px) {
   .steps { grid-template-columns: repeat(3, 1fr); }
   .split-2 { grid-template-columns: 1fr 1fr; }
-  .price-grid { grid-template-columns: repeat(3, 1fr); }
+  .price-grid { grid-template-columns: repeat(2, 1fr); }
   .field-row-3 { grid-template-columns: 1fr 1fr 1fr; }
   .hero { padding: 5.2rem 0 5.6rem; }
 }

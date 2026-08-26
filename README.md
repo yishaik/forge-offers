@@ -31,9 +31,9 @@ You can also open the HTML files directly (`file://`). Shareable links work best
 
 ## Pricing (product)
 
-- Free — 3 offers / month
-- Pro — $29 / month
-- 2.5% only if you collect payment in Forge
+- Free — 5 offers / month, ₪0
+- Pro — ₪49 / month (unlimited offers, your mark on the page, Hebrew + English)
+- Payments (Bit / card) come after we license an Israeli acquirer. The page is free to send.
 
 ## Files
 
