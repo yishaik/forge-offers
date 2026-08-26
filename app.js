@@ -7,7 +7,7 @@
       navCta: "Open the forge",
       kicker: "Tel Aviv · offers, not decks",
       hero: "Paste the job.<br>Send a priced page.<br><em>Get paid.</em>",
-      sub: "Service businesses lose the deal in the 24 hours they spend writing a quote. Forge turns a WhatsApp dump into a client-ready offer in 30 seconds.",
+      sub: "Service businesses lose the deal in the 24 hours they spend writing a quote. Forge turns a WhatsApp dump into a client-ready offer page.",
       cta: "Forge an offer",
       howLink: "How it works",
       howKicker: "Three moves",
@@ -91,7 +91,7 @@
       navCta: "פתחו את הפורג׳",
       kicker: "תל אביב · הצעות, לא מצגות",
       hero: "הדביקו את העבודה.<br>שלחו עמוד מתומחר.<br><em>קבלו תשלום.</em>",
-      sub: "עסקי שירות מפסידים את העסקה ב־24 השעות שהם כותבים הצעת מחיר. Forge הופך שרשור וואטסאפ לעמוד מוכן ללקוח ב־30 שניות.",
+      sub: "עסקי שירות מפסידים את העסקה ב־24 השעות שהם כותבים הצעת מחיר. Forge הופך שרשור וואטסאפ לעמוד מוכן ללקוח.",
       cta: "צרו הצעה",
       howLink: "איך זה עובד",
       howKicker: "שלושה מהלכים",
@@ -656,6 +656,14 @@
       applyI18n("en");
       forgeFromBrief();
     });
+    
+    // Auto-load Hebrew sample as default for Israel-first positioning
+    var persisted = loadPersisted();
+    if (!persisted || !persisted.items || !persisted.items.length) {
+      fillForm(SAMPLES.he);
+      applyI18n("he");
+      forgeFromBrief();
+    }
     $("#forge-btn").addEventListener("click", forgeFromBrief);
     $("#add-line").addEventListener("click", function () {
       state.data.items = state.data.items || [];
