@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forge — offer</title>
+  <meta name="description" content="A priced offer, ready to approve.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+Hebrew:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%230B0A09' width='32' height='32'/%3E%3Cpath d='M8 22h16M10 22c2-7 5-12 6-12s4 5 6 12' fill='none' stroke='%23E07A3D' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='8' r='1.6' fill='%23E07A3D'/%3E%3C/svg%3E">
+</head>
+<body class="offer-body" data-page="offer">
+  <div class="offer-page">
+    <header class="site-header no-print">
+      <a class="brand" href="index.html">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 22h16M10 22c2-7 5-12 6-12s4 5 6 12" fill="none" stroke="#E07A3D" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="16" cy="8" r="1.6" fill="#E07A3D"/>
+        </svg>
+        <span class="wordmark">Forge</span>
+      </a>
+      <div class="nav-actions">
+        <button type="button" class="btn btn-ghost btn-sm" onclick="window.print()" data-i18n="print">Print</button>
+      </div>
+    </header>
+
+    <div id="offer-root">
+      <div class="empty-offer">
+        <p class="kicker">Forge</p>
+        <h2 data-i18n="emptyTitle">This link has no offer yet</h2>
+        <p class="muted" data-i18n="emptyBody">Open the builder, forge a page, then copy the shareable link.</p>
+        <p><a href="app.html" data-i18n="emptyCta">Go to the builder</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

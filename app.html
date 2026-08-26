@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forge — offer builder</title>
+  <meta name="description" content="Paste a messy job brief. Get a client-ready priced offer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+Hebrew:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%230B0A09' width='32' height='32'/%3E%3Cpath d='M8 22h16M10 22c2-7 5-12 6-12s4 5 6 12' fill='none' stroke='%23E07A3D' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='8' r='1.6' fill='%23E07A3D'/%3E%3C/svg%3E">
+</head>
+<body data-page="builder">
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 22h16M10 22c2-7 5-12 6-12s4 5 6 12" fill="none" stroke="#E07A3D" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="16" cy="8" r="1.6" fill="#E07A3D"/>
+        </svg>
+        <span class="wordmark">Forge</span>
+      </a>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="he" aria-pressed="false">עב</button>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="index.html" data-i18n="back">Home</a>
+      </div>
+    </header>
+
+    <div class="app-intro">
+      <p class="kicker" data-i18n="builderKicker">Builder</p>
+      <h1 data-i18n="builderTitle">Paste the job</h1>
+      <p class="muted" data-i18n="builderSub">No model in the loop. We read prices, time, and deliverables — you edit the rest.</p>
+    </div>
+
+    <div class="builder">
+      <section class="panel">
+        <label class="field" for="brief">
+          <span data-i18n="briefLabel">Messy brief</span>
+          <textarea id="brief" placeholder="Paste the WhatsApp dump…"></textarea>
+        </label>
+        <div class="samples">
+          <button type="button" class="btn btn-line btn-sm" id="sample-he" data-i18n="sampleHe">Sample · Hebrew / ₪</button>
+          <button type="button" class="btn btn-line btn-sm" id="sample-en" data-i18n="sampleEn">Sample · English / $</button>
+        </div>
+
+        <div class="field-row">
+          <label class="field" for="biz">
+            <span data-i18n="bizLabel">Your business</span>
+            <input type="text" id="biz" autocomplete="organization">
+          </label>
+          <label class="field" for="client">
+            <span data-i18n="clientLabel">Client</span>
+            <input type="text" id="client" autocomplete="name">
+          </label>
+        </div>
+        <div class="field-row-3" style="margin-top:0.7rem">
+          <label class="field" for="currency">
+            <span data-i18n="curLabel">Currency</span>
+            <select id="currency">
+              <option value="ILS">ILS ₪</option>
+              <option value="USD">USD $</option>
+            </select>
+          </label>
+          <label class="field" for="olang">
+            <span data-i18n="langLabel">Offer language</span>
+            <select id="olang">
+              <option value="en">English</option>
+              <option value="he">עברית</option>
+            </select>
+          </label>
+          <label class="field" for="email">
+            <span data-i18n="emailLabel">Your email</span>
+            <input type="email" id="email" autocomplete="email" placeholder="you@studio.com">
+          </label>
+        </div>
+        <div style="margin-top:0.9rem">
+          <label class="switch">
+            <input type="checkbox" id="vat" checked>
+            <span data-i18n="vatLabel">Add VAT 17%</span>
+          </label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn-ember" id="forge-btn" data-i18n="forgeBtn">Forge offer</button>
+          <button type="button" class="btn btn-ghost" id="add-line" data-i18n="addLine">Add line</button>
+        </div>
+
+        <div id="lines-wrap" hidden>
+          <p class="kicker" style="margin:1.2rem 0 0.4rem" data-i18n="linesKicker">Line items — edit freely</p>
+          <div class="lines" id="lines"></div>
+          <div class="totals" id="totals"></div>
+        </div>
+      </section>
+
+      <section class="panel sticky">
+        <p class="kicker" data-i18n="previewKicker">Live preview</p>
+        <h2 data-i18n="previewTitle">What they open</h2>
+        <div id="preview" class="letter" style="margin-top:0.9rem"></div>
+        <div class="actions">
+          <button type="button" class="btn btn-ember" id="copy-link" data-i18n="copyLink">Copy shareable link</button>
+          <button type="button" class="btn btn-ghost" id="open-client" data-i18n="openClient">Open client view</button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <span>Forge · Tel Aviv · 2026</span>
+      <span class="mute" data-i18n="validNote">Offers expire 7 days from forge.</span>
+    </footer>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
